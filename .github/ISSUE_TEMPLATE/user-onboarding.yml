@@ -1,0 +1,29 @@
+name: User Onboarding
+description: Onboard users to repositories and organizations
+title: "[Onboarding]: "
+labels: ["onboarding"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to onboard users to repositories and organizations.
+        
+        After creating the issue, add a comment with the onboarding command:
+        
+        /onboard <filename>.csv
+        
+        Replace <filename> with the name of your CSV file.
+        Ensure the CSV file exists in the repository with the correct format:
+        mannequin_username,mannequin_id,role,target
+        
+        Where 'target' is either an organization name or 'owner/repo' for repositories.
+        
+        Roles: Admin, Write, Read (these will be mapped to appropriate GitHub permissions)
+  - type: input
+    id: requester
+    attributes:
+      label: Requester
+      description: Who is requesting this onboarding?
+      placeholder: '@username'
+    validations:
+      required: true
