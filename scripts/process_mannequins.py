@@ -5,31 +5,26 @@ import logging
 import requests
 import json
 
-# Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 GITHUB_API_URL = "https://api.github.com"
 TOKEN = os.getenv('GITHUB_TOKEN')
 CSV_FILE = os.getenv('CSV_FILE')
-AD_API_URL = os.getenv('AD_API_URL')  # You need to set this to your Active Directory API endpoint
-
+AD_API_URL = os.getenv('AD_API_URL')
 def get_ad_email(username):
-    # This function should query your Active Directory API to get the email for a given username
-    # Implement the actual API call based on your AD setup
     response = requests.get(f"{AD_API_URL}/users/{username}")
     if response.status_code == 200:
         return response.json().get('email')
     return None
 
 def determine_role(mannequin_role):
-    # Map mannequin roles to GitHub roles/permissions
     role_mapping = {
         'Admin': 'admin',
         'Write': 'push',
         'Read': 'pull',
-        # Add more mappings as needed
+        'Contributor': 'contributor'
     }
-    return role_mapping.get(mannequin_role, 'pull')  # Default to 'pull' if role is not recognized
+    return role_mapping.get(mannequin_role, 'pull')
 
 def add_user_to_org(username, org, role):
     url = f"{GITHUB_API_URL}/orgs/{org}/invitations"
