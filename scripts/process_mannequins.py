@@ -76,7 +76,7 @@ def validate_csv(csv_file):
     with open(csv_file, 'r') as file:
         csv_reader = csv.reader(file)
         header = next(csv_reader, None)
-        if header != ['mannequin-user', 'mannequin-id', 'target', 'role']:
+        if header != ['mannequin-user', 'mannequin-id', 'target-user', 'role']:
             raise ValueError("CSV file does not have the correct header format")
 
 def process_mannequins(csv_file):
