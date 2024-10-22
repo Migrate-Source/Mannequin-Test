@@ -1,4 +1,7 @@
 mannequin_username,mannequin_id,role,target
 saideep,Skanchi09,Admin,Migrate-Source
 saideep,Skanchi09,Read,Migrate-Target/Jira-test
+jayshreem,594124_mgmri,Admin,Migrate-Source
+Jayshreem,594124_mgmri,Read,Migrate-Target/Jira-test
+
 
