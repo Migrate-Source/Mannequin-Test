@@ -1,2 +1,4 @@
 mannequin_username,mannequin_id,role,target
 saideep,Skanchi09,Admin,Migrate-Source
+saideep,Skanchi09,Pull,Migrate-Target/Jira-test
+
