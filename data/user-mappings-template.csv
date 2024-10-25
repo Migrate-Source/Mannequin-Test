@@ -1,4 +1,4 @@
 mannequin_username,mannequin_id,role,target
-Veera,Veeranarayanaganji,Read,Migrate-Target/Jira-test
-Veera,Veeranarayanaganji,Contributor,Migrate-Source
+Saideep,Skanchi09,Contributor,Migrate-Target/Jira-test
+Saideep,Skanchi09,Owner,Migrate-Source
 
